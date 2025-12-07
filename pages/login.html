@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Appointment System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/darkmode.css">
+</head>
+<body>
+    <header class="gradient-header">
+        <nav class="navbar">
+            <div class="logo">APPOINTMENT SYSTEM</div>
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i> HOME</a></li>
+                <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> LOGIN</a></li>
+                <li><a href="register.html"><i class="fas fa-user-plus"></i> REGISTER</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <i class="fas fa-sun toggle-icon"></i>
+        <label class="toggle-switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="toggle-slider"></span>
+        </label>
+        <i class="fas fa-moon toggle-icon"></i>
+    </div>
+
+    <main class="auth-container">
+        <div class="auth-card">
+            <div class="auth-icon">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="loginEmail" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-user-tag"></i>
+                    <select id="loginRole" required>
+                        <option value="">Select Role</option>
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit"><i class="fas fa-sign-in-alt"></i> LOGIN</button>
+                <p class="auth-link">Don't have an account? <a href="register.html"><i class="fas fa-user-plus"></i> Register here</a></p>
+            </form>
+        </div>
+    </main>
+
+    <script type="module" src="../js/auth.js"></script>
+    <script src="../js/darkmode.js"></script>
+</body>
+</html>

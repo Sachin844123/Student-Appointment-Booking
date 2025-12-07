@@ -103,8 +103,8 @@ booking/
 
 ### Step 1: Clone the Repository
 ```bash
-git clone <your-repo-url>
-cd student-teacher-appointment
+git clone https://github.com/Sachin844123/Student-Appointment-Booking.git
+cd Student-Appointment-Booking
 ```
 
 ### Step 2: Firebase Setup

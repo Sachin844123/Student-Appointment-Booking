@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student-Teacher Appointment System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/calendar.css">
+    <link rel="stylesheet" href="css/darkmode.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="gradient-header">
+        <nav class="navbar">
+            <div class="logo">APPOINTMENT SYSTEM</div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
+                <li><a href="pages/login.html"><i class="fas fa-sign-in-alt"></i> LOGIN</a></li>
+                <li><a href="pages/register.html"><i class="fas fa-user-plus"></i> REGISTER</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <i class="fas fa-sun toggle-icon"></i>
+        <label class="toggle-switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="toggle-slider"></span>
+        </label>
+        <i class="fas fa-moon toggle-icon"></i>
+    </div>
+
+    <!-- Main Content -->
+    <main class="home-container">
+        <section class="content-section">
+            <!-- Left Side: Intro -->
+            <div class="intro-content">
+                <h1>Book your<br><span>appointment</span></h1>
+                <p>Book appointments with your teachers quickly and easily. No more waiting in queues or miscommunication. Get real-time status updates and maintain proper scheduling.</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary" onclick="location.href='pages/login.html'"><span><i class="fas fa-arrow-right"></i> Learn more</span></button>
+                </div>
+            </div>
+
+            <!-- Right Side: Calendar & Time Picker -->
+            <div class="form-card">
+                <h2>Select a date</h2>
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button class="calendar-nav" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                        <span class="calendar-month" id="currentMonth">JUNE 2025</span>
+                        <button class="calendar-nav" id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-weekdays">
+                        <div>Su</div>
+                        <div>Mo</div>
+                        <div>Tu</div>
+                        <div>We</div>
+                        <div>Th</div>
+                        <div>Fr</div>
+                        <div>Sa</div>
+                    </div>
+                    <div class="calendar-days" id="calendarDays"></div>
+                </div>
+                
+                <h3>Select a time</h3>
+                <div class="time-picker">
+                    <div class="time-display">
+                        <input type="number" id="hours" min="0" max="23" value="20" class="time-input">
+                        <span class="time-separator">:</span>
+                        <input type="number" id="minutes" min="0" max="59" value="30" class="time-input">
+                        <div class="time-arrows">
+                            <button class="time-arrow up"><i class="fas fa-chevron-up"></i></button>
+                            <button class="time-arrow down"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn-submit" onclick="location.href='pages/register.html'">Book now</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/app.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/darkmode.js"></script>
+</body>
+</html>

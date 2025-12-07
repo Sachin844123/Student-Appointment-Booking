@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">Teacher Portal</div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <span class="nav-label">Menu</span>
+                    <a href="#" class="nav-item active">
+                        <i class="fas fa-clock"></i>
+                        <span>Pending Appointments</span>
+                    </a>
+                    <a href="#all" class="nav-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>All Appointments</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-profile">
+                <div class="profile-section">
+                    <span class="profile-label">Profile</span>
+                    <div class="profile-name" id="profileName">Teacher</div>
+                    <button class="btn-logout" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Log out
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Dark Mode Toggle -->
+        <button class="dark-mode-toggle-btn" id="darkModeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Pending Appointments Section -->
+            <div class="content-header">
+                <h1>Pending Appointments</h1>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search..." id="searchPending">
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="appointments-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Message</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pendingTableBody">
+                        <!-- Data will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- All Appointments Section -->
+            <div class="content-header" style="margin-top: 40px;">
+                <h1>All Appointments</h1>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search..." id="searchAll">
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="appointments-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Message</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="allTableBody">
+                        <!-- Data will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="../js/teacher.js"></script>
+</body>
+</html>

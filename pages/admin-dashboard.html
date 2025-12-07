@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <span class="nav-label">Menu</span>
+                    <a href="#appointments" class="nav-item active" onclick="showSection('appointments')">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Appointments</span>
+                    </a>
+                    <a href="#teachers" class="nav-item" onclick="showSection('teachers')">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>Teachers</span>
+                    </a>
+                    <a href="#students" class="nav-item" onclick="showSection('students')">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>Students</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="showAddTeacherModal(); return false;">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Add Teacher</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="showAddStudentModal(); return false;">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Add Student</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-profile">
+                <div class="profile-section">
+                    <span class="profile-label">Profile</span>
+                    <div class="profile-name" id="profileName">Admin</div>
+                    <button class="btn-logout" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Log out
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Dark Mode Toggle -->
+        <button class="dark-mode-toggle-btn" id="darkModeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Appointments Section -->
+            <div id="appointmentsSection" class="content-section">
+                <div class="content-header">
+                    <h1>Manage Appointments</h1>
+                    <div class="header-actions">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search" id="searchAppointments">
+                        </div>
+                        <button class="btn-add" onclick="showAddAppointmentModal()">
+                            <i class="fas fa-plus"></i>
+                            Add Appointment
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="appointments-table">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Appointment Date & Time</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appointmentsTableBody">
+                            <!-- Data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Teachers Section -->
+            <div id="teachersSection" class="content-section" style="display: none;">
+                <div class="content-header">
+                    <h1>Teachers List</h1>
+                    <div class="header-actions">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search teachers..." id="searchTeachers">
+                        </div>
+                        <button class="btn-add" onclick="showAddTeacherModal()">
+                            <i class="fas fa-user-plus"></i>
+                            Add Teacher
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="appointments-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Department</th>
+                                <th>Subject</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="teachersTableBody">
+                            <!-- Data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Students Section -->
+            <div id="studentsSection" class="content-section" style="display: none;">
+                <div class="content-header">
+                    <h1>Students List</h1>
+                    <div class="header-actions">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search students..." id="searchStudents">
+                        </div>
+                        <button class="btn-add" onclick="showAddStudentModal()">
+                            <i class="fas fa-user-plus"></i>
+                            Add Student
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="appointments-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Department</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentsTableBody">
+                            <!-- Data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Appointment Modal -->
+    <div id="addAppointmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('addAppointmentModal')">&times;</span>
+            <h2>Add New Appointment</h2>
+            <form id="addAppointmentForm">
+                <input type="text" id="firstName" placeholder="First Name" required>
+                <input type="text" id="lastName" placeholder="Last Name" required>
+                <input type="email" id="studentEmail" placeholder="Student Email" required>
+                <input type="datetime-local" id="appointmentDateTime" required>
+                <select id="appointmentStatus" required>
+                    <option value="">Select Status</option>
+                    <option value="open">Open</option>
+                    <option value="confirm">Confirm</option>
+                    <option value="in-progress">In Progress</option>
+                </select>
+                <button type="submit" class="btn-submit">Add Appointment</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Teacher Modal -->
+    <div id="addTeacherModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('addTeacherModal')">&times;</span>
+            <h2><i class="fas fa-user-plus"></i> Add Teacher</h2>
+            <form id="addTeacherForm">
+                <input type="text" id="teacherName" placeholder="Full Name" required>
+                <input type="email" id="teacherEmail" placeholder="Email" required>
+                <input type="password" id="teacherPassword" placeholder="Password" required>
+                <input type="text" id="teacherDepartment" placeholder="Department" required>
+                <input type="text" id="teacherSubject" placeholder="Subject" required>
+                <button type="submit" class="btn-submit">Add Teacher</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Student Modal -->
+    <div id="addStudentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('addStudentModal')">&times;</span>
+            <h2><i class="fas fa-user-plus"></i> Add Student</h2>
+            <form id="addStudentForm">
+                <input type="text" id="studentName" placeholder="Full Name" required>
+                <input type="email" id="studentEmail" placeholder="Email" required>
+                <input type="password" id="studentPassword" placeholder="Password" required>
+                <input type="text" id="studentDepartment" placeholder="Department" required>
+                <select id="studentApproved" required>
+                    <option value="">Select Approval Status</option>
+                    <option value="true">Approved</option>
+                    <option value="false">Pending</option>
+                </select>
+                <button type="submit" class="btn-submit">Add Student</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="../js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+/* Dark Mode Styles */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Toggle Switch */
+.dark-mode-toggle {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 60px;
+    height: 30px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 30px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: '';
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    background-color: #7c6fd6;
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(30px);
+}
+
+.toggle-icon {
+    font-size: 20px;
+    color: #7c6fd6;
+}
+
+/* Dark Mode Colors */
+body.dark-mode {
+    background: #1a1a2e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .gradient-header {
+    background: linear-gradient(135deg, #5a4db8 0%, #6b5ec5 100%);
+}
+
+body.dark-mode .content-section {
+    background: #16213e;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .content-section::before {
+    background: linear-gradient(135deg, #5a4db8 0%, #7c6fd6 100%);
+}
+
+body.dark-mode .intro-content h1 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .intro-content h1 span {
+    color: #9b8ff5;
+}
+
+body.dark-mode .intro-content p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .form-card {
+    background: #16213e;
+    border-color: #2a3f5f;
+}
+
+body.dark-mode .form-card h2,
+body.dark-mode .form-card h3 {
+    color: #9b8ff5;
+}
+
+body.dark-mode .form-card input,
+body.dark-mode .form-card textarea {
+    background: #0f1624;
+    border-color: #2a3f5f;
+    color: #e0e0e0;
+}
+
+body.dark-mode .form-card input::placeholder,
+body.dark-mode .form-card textarea::placeholder {
+    color: #6b7280;
+}
+
+body.dark-mode .form-card input:focus,
+body.dark-mode .form-card textarea:focus {
+    background: #1a1a2e;
+    border-color: #7c6fd6;
+}
+
+/* Calendar Dark Mode */
+body.dark-mode .calendar-day {
+    background: #0f1624;
+    color: #b0b0b0;
+}
+
+body.dark-mode .calendar-day:hover {
+    background: #2a3f5f;
+    color: #9b8ff5;
+}
+
+body.dark-mode .calendar-day.selected {
+    background: #7c6fd6;
+    color: white;
+}
+
+body.dark-mode .calendar-day.today {
+    border-color: #9b8ff5;
+}
+
+body.dark-mode .time-display {
+    background: #0f1624;
+    border-color: #2a3f5f;
+}
+
+body.dark-mode .time-input {
+    color: #9b8ff5;
+}
+
+body.dark-mode .time-separator {
+    color: #9b8ff5;
+}
+
+body.dark-mode .time-arrow {
+    color: #9b8ff5;
+}
+
+/* Auth Pages Dark Mode */
+body.dark-mode .auth-card {
+    background: #16213e;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .auth-card h2 {
+    color: #9b8ff5;
+}
+
+body.dark-mode .auth-icon i {
+    color: #9b8ff5;
+}
+
+body.dark-mode .auth-card input,
+body.dark-mode .auth-card select {
+    background: #0f1624;
+    border-color: #2a3f5f;
+    color: #e0e0e0;
+}
+
+body.dark-mode .auth-card input::placeholder {
+    color: #6b7280;
+}
+
+body.dark-mode .auth-card input:focus,
+body.dark-mode .auth-card select:focus {
+    background: #1a1a2e;
+    border-color: #7c6fd6;
+}
+
+body.dark-mode .input-group i {
+    color: #6b7280;
+}
+
+body.dark-mode .auth-link {
+    color: #b0b0b0;
+}
+
+body.dark-mode .auth-link a {
+    color: #9b8ff5;
+}
+
+/* Dashboard Dark Mode */
+body.dark-mode .dashboard-section {
+    background: #16213e;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .dashboard-section h2 {
+    color: #9b8ff5;
+}
+
+body.dark-mode .teacher-card,
+body.dark-mode .appointment-card,
+body.dark-mode .user-card {
+    background: #0f1624;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .teacher-card h3,
+body.dark-mode .appointment-card h3,
+body.dark-mode .user-card h3 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .teacher-card p,
+body.dark-mode .appointment-card p,
+body.dark-mode .user-card p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .teacher-card:hover,
+body.dark-mode .appointment-card:hover,
+body.dark-mode .user-card:hover {
+    box-shadow: 0 15px 40px rgba(124, 111, 214, 0.4);
+}
+
+body.dark-mode .search-teacher input {
+    background: #0f1624;
+    border-color: #2a3f5f;
+    color: #e0e0e0;
+}
+
+body.dark-mode .search-teacher input::placeholder {
+    color: #6b7280;
+}
+
+body.dark-mode .search-teacher input:focus {
+    background: #1a1a2e;
+    border-color: #7c6fd6;
+}
+
+body.dark-mode .user-info {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Modal Dark Mode */
+body.dark-mode .modal {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode .modal-content {
+    background: #16213e;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .modal-content h2 {
+    color: #9b8ff5;
+}
+
+body.dark-mode .modal-content input,
+body.dark-mode .modal-content textarea {
+    background: #0f1624;
+    border-color: #2a3f5f;
+    color: #e0e0e0;
+}
+
+body.dark-mode .modal-content input::placeholder,
+body.dark-mode .modal-content textarea::placeholder {
+    color: #6b7280;
+}
+
+body.dark-mode .modal-content input:focus,
+body.dark-mode .modal-content textarea:focus {
+    background: #1a1a2e;
+    border-color: #7c6fd6;
+}
+
+body.dark-mode .close {
+    color: #b0b0b0;
+}
+
+body.dark-mode .close:hover {
+    color: #f44336;
+}
+
+/* Status Badges Dark Mode */
+body.dark-mode .status-pending {
+    background: #3d3416;
+    color: #ffd966;
+}
+
+body.dark-mode .status-approved {
+    background: #1a3d2a;
+    color: #6ee7a7;
+}
+
+body.dark-mode .status-canceled {
+    background: #3d1a1a;
+    color: #ff8a8a;
+}
+
+/* Scrollbar Dark Mode */
+body.dark-mode::-webkit-scrollbar-track {
+    background: #0f1624;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb {
+    background: #5a4db8;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb:hover {
+    background: #7c6fd6;
+}
+
+/* Calendar Weekdays Dark Mode */
+body.dark-mode .calendar-weekdays div {
+    color: #6b7280;
+}
+
+body.dark-mode .calendar-month {
+    color: #9b8ff5;
+}
+
+body.dark-mode .calendar-nav {
+    color: #9b8ff5;
+}
