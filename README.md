@@ -95,6 +95,15 @@ booking/
     └── admin-dashboard.html     # Admin interface
 ```
 
+## � Securityt Notice
+
+⚠️ **IMPORTANT**: Your Firebase credentials should NEVER be committed to version control!
+
+- `js/firebase-config.js` is already in `.gitignore`
+- Use `js/firebase-config.example.js` as a template
+- See `SECURITY.md` for detailed security setup
+- See `setup-firebase.md` for step-by-step configuration
+
 ## 🔧 Installation & Setup
 
 ### Prerequisites

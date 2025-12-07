@@ -3,6 +3,9 @@
 firebase-debug.log
 firestore-debug.log
 
+# Firebase Config (IMPORTANT: Keep this private!)
+js/firebase-config.js
+
 # Environment
 .env
 .env.local
@@ -23,3 +26,4 @@ npm-debug.log*
 
 # Dependencies
 node_modules/
+.vercel
