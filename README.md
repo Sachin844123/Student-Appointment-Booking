@@ -142,6 +142,11 @@ const firebaseConfig = {
 
 ### Step 4: Create Admin User
 
+### Default admin credentials
+
+📧 Email: admin@gmail.com  
+🔐 Password: admin123
+
 Since the first admin needs to be created manually:
 
 1. Register a user through the registration page
